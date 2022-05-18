@@ -1,0 +1,13 @@
+============================ คำสั่งติดตั้ง Vue.js 3 ============================
+*** stap 1 : npm install -g @vue/cli ***
+*** stap 2 : vue --version ***
+*** stap 3 : vue create my-app  ***
+	> Default (vue3)
+	> cd my-app
+	> npm run serve
+ 
+============================ การนำ computed Propreties ไปใช้งาน  ============================
+-> กรองข้อมูล
+-> คำนวณ
+-> กำหนดเงือนไข
+-> ดึงข้อมูล ( Getter Method) 

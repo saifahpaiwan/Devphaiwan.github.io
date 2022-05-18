@@ -1,0 +1,99 @@
+=====================================คำสั่ง laravel========================================
+composer create-project laravel/laravel phaiwan.com
+
+composer require laravel/ui 
+php artisan ui bootstrap 
+php artisan ui bootstrap --auth 
+npm install && npm run dev
+php artisan migrate
+
+
+// คำสั่งสร้าง Model และสร้าง Table databese //
+- php artisan make:model cooperation_network -m
+
+//คำสั่งอัพ Table ที่สร้างไปยัง databese //
+- php artisan migrate
+- php artisan migrate:fresh
+
+//คำสั่งสร้าง Controller //
+- php artisan make:controller NetworkController
+ 
+
+
+// คำสั่งเพิ่ม column
+- php artisan make:migration add_status_to_users --table=bill_tems
+php artisan make:migration add_verify_information_column_in_users_table --table=users
+
+// คำสั่งสำหรับ สร้างการกำหนดสิทธิ
+- php artisan make:middleware is_permissions
+
+//คำสั่งสำหรับ Add ข้อมูลเบื้องต้น
+- php artisan make:seeder CreateUsersSeeder
+- php artisan db:seed --class=CreateUsersSeeder
+
+//คำสั่งสำหรับเคลีย cache
+- php artisan config:cache
+- php artisan cache:clear
+- php artisan route:cache
+- php artisan view:clear
+// อัพเดท  Package //
+- php artisan package
+
+composer update
+
+//คำสั่งสร้างส่ง Mail
+- php artisan make:mail storeMail_Order
+link : https://medium.com/ckartisan/laravel-sending-mail-1e9eb9a9af23
+
+// Add Login with Google to your Laravel app
+link --> https://medium.com/employbl/add-login-with-google-to-your-laravel-app-d2205f01b895
+link --> https://www.itsolutionstuff.com/post/laravel-6-socialite-login-with-google-gmail-accountexample.html
+
+// Create Yajra Datatables
+link ---> https://www.positronx.io/laravel-datatables-example/
+- composer require yajra/laravel-datatables-oracle
+'providers' => Yajra\DataTables\DataTablesServiceProvider::class,
+'aliases' => 'DataTables' => Yajra\DataTables\Facades\DataTables::class,
+// dom PDF //
+ https://www.itsolutionstuff.com/post/laravel-8-pdf-laravel-8-generate-pdf-file-using-dompdfexample.html
+ https://www.ishare.in.th/articles/%E0%B8%A7%E0%B8%B4%E0%B8%98%E0%B8%B5%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B8%A0%E0%B8%B2%E0%B8%A9%E0%B8%B2%E0%B9%84%E0%B8%97%E0%B8%A2%E0%B8%9A%E0%B8%99-laravel-%E0%B8%94%E0%B9%89%E0%B8%A7%E0%B8%A2-laravel-dompdf-%E0%B9%82%E0%B8%94%E0%B8%A2%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%80%E0%B8%9E%E0%B8%B4%E0%B9%88%E0%B8%A1-font-%E0%B8%A0%E0%B8%B2%E0%B8%A9%E0%B8%B2%E0%B9%84%E0%B8%97%E0%B8%A2%E0%B8%A5%E0%B8%87%E0%B9%84%E0%B8%9B
+
+ ==================== Convert a pdf to an image ====================
+-->> Git Hub : link : https://github.com/spatie/pdf-to-image#issues-regarding-ghostscript
+-->> ghostscript : https://www.ghostscript.com/download/gsdnld.html
+-->> imagemagick: https://imagemagick.org/script/download.php#windows
+
+Use ------------------------------------------------------------------
+	use Org_Heigl\Ghostscript\Ghostscript;
+Soue Code ------------------------------------------------------------------
+	Ghostscript::setGspath("C:\Program Files\gs\gs9.54.0\bin\gswin64c.exe");
+	$pdf = new Spatie\PdfToImage\Pdf(public_path('images/document-file/UVC.pdf'));
+	$pdf->saveImage(public_path('images/document-file/text.jpg'));
+YOUTUBE :: https://youtu.be/8PUcLVgU2u0
+==================== Convert a pdf to an image ====================
+
+
+\Image::make(); use Image;
+ composer require intervention/image
+providers => Intervention\Image\ImageServiceProvider::class,
+aliases  =>   'Image' => Intervention\Image\Facades\Image::class
+------------------------------------------------------------------------
+ลิงค์ล็อกอินเข้าสู่ระบบ
+link : https://edocument.chokchaiinternational.com/
+ลิงค์ลงทะเบียนขอเข้าใช้งาน
+link : https://edocument.chokchaiinternational.com/register
+
+git commit -m 'Added Farmsport'
+git remote add origin https://github.com/saifahpaiwan/Farmsport.git
+
+git config --global user.email "dev.saifah8953@gmail.com"
+git config --global user.name "saifahpaiwan"
+
+git clone https://github.com/saifahpaiwan/Devphaiwan.github.io.git
+
+====== รายงานผลการพัฒนาโปรแกรม ขายสินค้า Drive Thru ======
+- การพัฒนาส่วนของการสั่งซื้อสินค้าและชำระเงิน เลือกจุดรับสินค้าเองได้ (สำเร็จ)
+- สอนการใช้งานโปรแกรมหลังบ้าน เพื่อเพิ่มและจัดการสินค้าเองได้ (สำเร็จ)
+- การพัฒนาส่วนของการออกรายงานการขาย ยอดขายประจำวัน / ยอดขายสินค้าต่อชิ้น (สำเร็จ) *เหลือสอน Admin ใช้งาน
+- พัฒนาส่วนของการแจ้งเตือนและหน้ารับออเดอร์สินค้าละรายละเอียด โดยการแจ้งเตือนทั้ง Line และระบบหลังบ้าน (สำเร็จ)
+- ทดสอบการใช้งานโปรแกรมจริง สถานที่ฟาร์มบูทหกเหลี่ยม ได้รับ Require ให้ปรับปรุงโปแกรมบ้างส่วนและได้ทำการแก้ไข (สำเร็จ)
